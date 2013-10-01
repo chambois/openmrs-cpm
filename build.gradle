@@ -87,8 +87,3 @@ jacocoTestReport {
     description = "Generate Jacoco coverage reports after running tests."
     additionalSourceDirs = files(sourceSets.main.allJava.srcDirs)
 }
-
-tasks.withType(Compile) {
-    options.debug = true
-    options.compilerArgs = ["-g"]
-}
