@@ -14,9 +14,17 @@
 # Maven build directories
 target
 
+# Gradle build directories
+.gradle
+api/build/
+omod/build/
+build/
+
 # IntelliJ project files
 .idea
 *.iml
+*.ipr
+*.iws
 
 # Mac OS X
 .DS_Store
