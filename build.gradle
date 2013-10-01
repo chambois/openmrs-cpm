@@ -2,6 +2,7 @@
 allprojects {
 
     apply plugin: 'java'
+    apply plugin: 'jacoco'
 
     group = 'org.openmrs.module'
     version = '1.0-SNAPSHOT'
@@ -79,4 +80,15 @@ defaultTasks 'createOmod'
 
 task wrapper(type: Wrapper) {
     gradleVersion = '1.7'
+}
+
+jacocoTestReport {
+    group = "Reporting"
+    description = "Generate Jacoco coverage reports after running tests."
+    additionalSourceDirs = files(sourceSets.main.allJava.srcDirs)
+}
+
+tasks.withType(Compile) {
+    options.debug = true
+    options.compilerArgs = ["-g"]
 }
